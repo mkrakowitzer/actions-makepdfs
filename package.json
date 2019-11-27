@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "puppeteer": "1.15.0",
+    "commander": "2.20.0",
+    "markdown-it": "8.4.2"
+  }
+}
