@@ -3,7 +3,8 @@ name: 'Create PDF'
 description: 'Creates PDF files from github markdown'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://docker.pkg.github.com/mkrakowitzer/actions-makepdfs/makepdfs:latest'
+
 inputs:
   markdown_dir:
     description: 'Location of markdown files in github repository'
