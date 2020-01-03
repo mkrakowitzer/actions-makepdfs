@@ -115,7 +115,7 @@ fs.readdir (mddir,function(err, files) {
 						}
 						return '<pre class="hljs"><code><div>' + str + '</div></code></pre>';
 					}
-				});
+				}).use(require('markdown-it-highlightjs'), opts);
 				var options = {
 						slugify: Slug
 				}
