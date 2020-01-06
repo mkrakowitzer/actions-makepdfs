@@ -46,7 +46,7 @@ jobs:
     - name: Build the docker image with latest tag for dockerhub
       run: |
         echo "$DOCKERHUB_PASSWORD" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
-        docker-compose -f docker-compose-docekrhub.yaml build
+        docker-compose -f docker-compose-dockerhub.yaml build
       if: github.ref == 'refs/heads/master'
       env:
         DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
