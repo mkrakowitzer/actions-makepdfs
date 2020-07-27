@@ -15,7 +15,10 @@ This action creates PDF documents from github markdown
 ## Example usage
 
 ```
-on: [push]
+on:
+  push:
+    paths:
+      - 'doc/**'
 
 name: CreatePDFs
 
