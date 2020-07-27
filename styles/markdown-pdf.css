@@ -50,6 +50,7 @@ blockquote {
 
 @media print {
 	p {page-break-inside: avoid;}
-	h1 {page-break-before: always;}
+	h1 {page-break-before: always; page-break-after: avoid;}
+	h2, h3, h4, h5, h6 {page-break-after: avoid;}
 	footer {page-break-after: always;}
 }
