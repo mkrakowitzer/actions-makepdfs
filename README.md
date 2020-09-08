@@ -29,6 +29,9 @@ jobs:
     - uses: actions/checkout@v1
     - uses: mkrakowitzer/actions-makepdfs@master
       if: github.ref == 'refs/heads/master'
+      with:
+        markdown_dir: doc
+        output_dir: tmp
     - uses: actions/upload-artifact@v1
       with:
         name: platform-architecture-docs
