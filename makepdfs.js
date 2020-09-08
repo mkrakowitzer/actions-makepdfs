@@ -48,7 +48,7 @@ function makePdf(data,file) {
 		const puppeteer = require('puppeteer');
 		(async () => {
 				const browser = await puppeteer.launch( {
-				executablePath:'/node_modules/puppeteer/.local-chromium/linux-706915/chrome-linux/chrome',
+				executablePath:'/node_modules/puppeteer/.local-chromium/linux-782078/chrome-linux/chrome',
 				args: [
 					'--headless',
 					'--no-sandbox',
@@ -115,7 +115,7 @@ fs.readdir (mddir,function(err, files) {
 						}
 						return '<pre class="hljs"><code><div>' + str + '</div></code></pre>';
 					}
-				});
+				}).use(require('markdown-it-highlightjs'), { inline: true });
 				var options = {
 						slugify: Slug
 				}
