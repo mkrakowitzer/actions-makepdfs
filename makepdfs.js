@@ -48,7 +48,7 @@ function makePdf(data,file) {
 	try {
 		file  = file.replace('.md','');
 		const puppeteer = require('puppeteer');
-    const express = require('express');
+  		const express = require('express');
 		(async () => {
 
         //Create server for images
@@ -77,7 +77,7 @@ function makePdf(data,file) {
 			});
 
 			await browser.close();
-      await server.close();
+                        await server.close();
 		  })();
 	} catch (error) {
 		showErrorMessage('makeHtml()', error);
