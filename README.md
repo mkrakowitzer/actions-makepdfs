@@ -17,7 +17,7 @@ This action creates PDF documents from github markdown
 **Optional** Location where media files such as images and gifs which are 
 embedded in Markdown files are stored. Default to `doc/img` Keep in mind 
 that all media files need to be referenced in markdown files as follows: 
-`[Alt Text](http://localhost:3000/image_name.jpg)`. 
+`![Alt Text](http://localhost:3000/image_name.jpg)`. 
 
 This is due to security features in puppeteer which prevent referencing 
 local images embedded in HTML.
