@@ -15,6 +15,10 @@ inputs:
     description: 'Location to output PDF files to'
     required: true
     default: 'tmp'
+  media_dir:
+    description: 'Location of local media files (images, gifs) for the markdown files'
+    required: false
+    default: 'doc/img'
 
 branding:
   icon: 'activity'
