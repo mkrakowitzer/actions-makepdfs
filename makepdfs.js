@@ -120,6 +120,8 @@ fs.readdir (mddir,function(err, files) {
 						slugify: Slug
 				}
 				md.use(require('markdown-it-named-headers'), options);
+	      			md.use(require("markdown-it-anchor").default); // Optional, but makes sense as you really want to link to something
+				md.use(require("markdown-it-table-of-contents"));
 				var body = md.render(text);
 				makePdf('data:text/html;,' + encodeURIComponent(makeHtml(body)),file);
       }
