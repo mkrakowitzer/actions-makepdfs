@@ -2,11 +2,13 @@
 
 const markdown_dir = process.env.INPUT_MARKDOWN_DIR;
 const output_dir = process.env.INPUT_OUTPUT_DIR;
+const media_dir = process.env.INPUT_MEDIA_DIR;
 
 'use strict';
 var fs = require( 'fs' );
 var mddir = '/github/workspace/' + markdown_dir;
 var dir = '/github/workspace/' + output_dir + '/';
+var meddir = '/github/workspace' + media_dir + '/';
 
 /*
  * Show an error message
@@ -46,7 +48,14 @@ function makePdf(data,file) {
 	try {
 		file  = file.replace('.md','');
 		const puppeteer = require('puppeteer');
+  		const express = require('express');
 		(async () => {
+
+        //Create server for images
+        const app = express();
+        app.use(express.static(meddir));
+        server = app.listen(3000);
+
 				const browser = await puppeteer.launch( {
 				executablePath:'/node_modules/puppeteer/.local-chromium/linux-782078/chrome-linux/chrome',
 				args: [
@@ -68,6 +77,7 @@ function makePdf(data,file) {
 			});
 
 			await browser.close();
+                        await server.close();
 		  })();
 	} catch (error) {
 		showErrorMessage('makeHtml()', error);
@@ -92,6 +102,10 @@ var path = require('path');
 
 if (!fs.existsSync(dir)){
     fs.mkdirSync(dir);
+}
+
+if (!fs.existsSync(meddir)){
+    fs.mkdirSync(meddir);
 }
 
 fs.readdir (mddir,function(err, files) {
