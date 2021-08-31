@@ -8,7 +8,7 @@ RUN apt-get update && \
       libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget curl && \
     rm -rf /var/lib/apt/lists/*
 
-RUN npm install puppeteer@5.2.1 markdown-it mustache markdown-it-named-headers cheerio markdown-it-highlightjs
+RUN npm install puppeteer@5.2.1 markdown-it mustache markdown-it-named-headers cheerio markdown-it-highlightjs markdown-it-table-of-contents markdown-it-anchor
 COPY makepdfs.js /
 COPY package.json /
 COPY template/ template/
