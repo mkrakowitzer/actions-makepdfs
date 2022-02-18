@@ -9,6 +9,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN npm install puppeteer@5.2.1 markdown-it mustache markdown-it-named-headers cheerio markdown-it-highlightjs markdown-it-table-of-contents markdown-it-anchor express
+RUN npm ci
 COPY makepdfs.js /
 COPY package.json /
 COPY template/ template/
